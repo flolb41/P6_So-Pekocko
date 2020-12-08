@@ -1,0 +1,2 @@
+exports.userName = '';
+exports.pwdAtlas = '';
