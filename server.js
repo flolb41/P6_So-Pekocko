@@ -1,3 +1,8 @@
+/**
+ * Mise en place du server. 
+ * Port d'ecoute.
+ * Avec création du serveur en fonction de l'app
+ */
 const http = require('http');
 const app = require('./app');
 

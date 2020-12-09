@@ -1,8 +1,16 @@
+/**
+ * Importations des modules et schéma requis
+ */
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 
+/**
+ * Parte métier servant à créer un nouvel utilisateur
+ * On récupère le corps de la requête pour créer un nouveau User grâce à notre schéma
+ * Au passage on crypte le password, base de la sécurité
+ */
 exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10)
         .then(hash => {
@@ -18,6 +26,13 @@ exports.signup = (req, res, next) => {
         .catch(error => res.status(500).json({ error }));
 };
 
+/**
+ * Partie métier servant à connecter un utilisateur enregistré
+ * on vérifie donc que l'user existe bien 
+ * puis on compare le password de la requête et celui créé au signup
+ * si tout est ok, on attribue un token a l'user qui lui permettra d'utiliser les routes
+ * de l'api
+ */
 exports.login = (req, res, next) => {
     User.findOne({ email: req.body.email })
     .then(user => {

@@ -1,3 +1,9 @@
+/**
+ * Importation de multer
+ * Cette config sert à normaliser les fichier image
+ * Leur type ainsi que leur nom sont traités pour avoir 
+ * une homogénéité des nom de fichier
+ */
 const multer = require('multer');
 
 const MIME_TYPES = {

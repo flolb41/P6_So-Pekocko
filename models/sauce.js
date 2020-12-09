@@ -1,3 +1,9 @@
+/**
+ * Importation de Mangoose
+ * Ici nous créons un schéma de sauce
+ * Ce format est demandé par le client
+ * Il s'agit de la structure type d'une sauce
+ */
 const mongoose = require('mongoose');
 
 const sauceSchema = mongoose.Schema({

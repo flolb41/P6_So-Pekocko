@@ -1,5 +1,13 @@
+/**
+ * Importation de jsonwebtoken
+ */
 const jwt = require('jsonwebtoken');
 
+/**
+ * Partie métier servant à authentifier les routes à sécuriser 
+ * en fonction de l'user
+ * On vérifie si les données codées correspondent
+ */
 module.exports = (req, res, next) => {
   try {
     const token = req.headers.authorization.split(' ')[1];
